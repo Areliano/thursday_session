@@ -4,17 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thursday Learning</title>
+    <style>
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #5ee7df, #b490ca);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+
+        /* Card Container */
+        .container {
+            background-color: #fff;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        /* Heading */
+        h1 {
+            color: #4a148c;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        /* Learning List */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #ede7f6;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        li:hover {
+            background: #d1c4e9;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            background-color: #6a1b9a;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #4a148c;
+        }
+
+        /* Animation for entry */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container {
+            animation: fadeIn 1s ease forwards;
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <h1>Thursday Learning Session</h1>
-        <p>Welcome to today's learning session! Here is what we learnt today:</p>
+    <div class="container">
+        <h1> Thursday Learning Session</h1>
+        <p>Welcome to today's learning session! Here's what we covered:</p>
         <ul>
-            <li>Introduction to Zynamis</li>
-            <li>How to Collaborate on github</li>
-            <li>Learning git commands and basic linux commands</li>
+            <li> Introduction to Zynamis & TechLeap Apprenticeship Program</li>
+            <li> Collaborating on GitHub</li>
+            <li> Using Git and Basic Linux Commands</li>
         </ul>
-       
+        <a href="#" class="btn" onclick="showQuote()">Get Motivated Here!!!</a>
+        <div class="footer" id="quote">Keep learning and growing every day! </div>
     </div>
+
+    <script>
+    
+        const quotes = [
+            "Code, learn, repeat. Every expert was once a beginner.",
+            "Don't watch the clock; do what it does — keep going.",
+            "Dream big, start small, act now!",
+            "Your potential is endless — keep pushing forward.",
+            "One day or day one. You decide."
+        ];
+
+        function showQuote() {
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            document.getElementById("quote").textContent = randomQuote;
+        }
+    </script>
 </body>
 </html>
